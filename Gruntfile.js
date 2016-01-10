@@ -14,9 +14,9 @@ var _ = require('lodash');
 
 module.exports = function (grunt) {
 
-    grunt.registerTask('verify-repositories', 'Verifies that repositories as dependencies are tags', function () {
+    grunt.loadNpmTasks('grunt-release');
 
-        grunt.loadNpmTasks('grunt-release');
+    grunt.registerTask('verify-repositories', 'Verifies that repositories as dependencies are tags', function () {
 
         var done = this.async();
         var bowerJson = grunt.file.readJSON('bower.json');
